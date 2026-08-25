@@ -14,16 +14,30 @@
             padding: 0;
         }
 
+        .logo-esquina {
+            position: fixed; 
+            top: 20px;
+            left: 25px;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 12px; 
+            
+            border: 2px solid #d4cec3;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1100; 
+        }
+        
        
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             background-color: #e3ded5; 
-            padding: 15px 30px;
-            margin: 20px auto;
-            width: 85%;
-            max-width: 900px;
+            padding: 12px 25px;
+            margin: 25px auto;
+            width: 60%;
+            max-width: 500px;
             border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 
@@ -31,31 +45,11 @@
             top: 20px;
             z-index: 1000;
         }
-
-       .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-img {
-            width: 45px;  
-            height: 45px; 
-            object-fit: cover; 
-            border-radius: 50%; 
-            border: 2px solid #d4cec3; 
-        }
-        
-        .logo-texto {
-            font-weight: bold;
-            font-size: 1rem;
-            color: #4a4543;
-        }
         
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             margin: 0;
             padding: 0;
         }
@@ -80,13 +74,7 @@
 
         main {
             max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 40px auto;
+            margin: 60px auto;
             padding: 20px;
         }
 
@@ -111,12 +99,9 @@
 </head>
 <body>
 
-
+<img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
+    
     <nav>
-        <div class="logo-container">
-            <img src="img/logoIbero.png" alt="Logo" class="logo-img">
-            <span class="logo-texto">Mi Portafolio</span>
-        </div>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
             <li><button onclick="cambiarPagina('proyectos')" id="btn-proyectos">Proyectos</button></li>
