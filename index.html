@@ -5,12 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio de Ingeniería</title>
     <style>
+        /* Estilos generales */
         body {
-            background-color: #f4f1ea; 
-            color: #2c2a29;
+            background-color: #f4f1ea; /* Fondo beige aesthetic */
+            color: #2c2a29; /* Texto oscuro */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+        }
+
+        /* DISEÑO DE LA BARRA DE NAVEGACIÓN */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e3ded5; /* Un beige un poquito más oscuro para destacar la barra */
+            padding: 15px 30px;
+            margin: 20px auto;
+            width: 85%;
+            max-width: 900px;
+            
+            /* AQUÍ ESTÁ EL TRUCO DE LAS FORMAS OVALADAS/REDONDEADAS */
+            border-radius: 50px; /* Entre más alto el número, más ovalados/redondeados quedan los bordes */
+            
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Una sombrita muy sutil */
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #4a4543;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4543;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        /* Efecto cuando pasas el mouse por encima de los enlaces */
+        .nav-links a:hover {
+            color: #8c7b6c; 
         }
 
         h1 {
@@ -22,7 +66,17 @@
 </head>
 <body>
 
-    <h1>Producción Electrónica</h1>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav>
+        <div class="logo">Mi Portafolio</div>
+        <ul class="nav-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Acerca de</a></li>
+        </ul>
+    </nav>
+
+    <h1>Bienvenida a mi portafolio</h1>
 
 </body>
 </html>
