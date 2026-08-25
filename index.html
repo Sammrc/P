@@ -12,8 +12,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-
-            scroll-behavior: smooth;
         }
 
        
@@ -48,59 +46,98 @@
             padding: 0;
         }
 
-        .nav-links a {
+        .nav-links button {
+            background: none;
+            border: none;
+            cursor: pointer;
             text-decoration: none;
             color: #4a4543;
             font-weight: 600;
-            transition: color 0.3s ease;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
         }
 
-        
-        .nav-links a:hover {
-            color: #8c7b6c; 
+        .nav-links button:hover, .nav-links button.active {
+            background-color: #d4cec3;
+            color: #1f1d1c;
         }
 
-
-        section {
-            padding: 80px 20px;
+        main {
             max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            border-bottom: 1px solid #e3ded5; 
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .page-section.active-page {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        h1 {
+       h1, h2 {
             color: #1f1d1c;
         }
     </style>
 </head>
 <body>
 
+
     <nav>
         <div class="logo">Producción Electrónica</div>
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#acerca">Acerca de</a></li>
+            <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
+            <li><button onclick="cambiarPagina('proyectos')" id="btn-proyectos">Proyectos</button></li>
+            <li><button onclick="cambiarPagina('acerca')" id="btn-acerca">Acerca de</button></li>
         </ul>
     </nav>
--------------------------------
-<section id="inicio">
-        <h1>Bienvenida a mi portafolio</h1>
-        <p>Bitácora de ingeniería, sistemas embebidos, diseño y control.</p>
-    </section>
--------------------------------
-    <section id="proyectos">
-        <h2>Mis Proyectos</h2>
-        <p>Aquí irán los recuadros con las prácticas de la materia.</p>
-    </section>
--------------------------------
-    <section id="acerca">
-        <h2>Acerca de mí</h2>
-        <p>Espacio dedicado a documentar el desarrollo académico y técnico.</p>
-    </section>
-    
 
+
+<main>
+    
+        <section id="inicio" class="page-section active-page">
+            <h1>Portafolio de Proyectos</h1>
+            <p>...</p>
+        </section>
+
+
+        <section id="proyectos" class="page-section">
+            <h2>Mis Proyectos</h2>
+            <p>....</p>
+        </section>
+
+    
+        <section id="acerca" class="page-section">
+            <h2>Acerca del Equipo</h2>
+            <p>...</p>
+        </section>
+    </main>
+
+ 
+    <script>
+        function cambiarPagina(idSeccion) {
+            const secciones = document.querySelectorAll('.page-section');
+            secciones.forEach(sec => sec.classList.remove('active-page'));
+
+            const botones = document.querySelectorAll('.nav-links button');
+            botones.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(idSeccion).classList.add('active-page');
+
+            document.getElementById('btn-' + idSeccion).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
