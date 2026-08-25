@@ -32,12 +32,26 @@
             z-index: 1000;
         }
 
-        .logo {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #4a4543;
+       .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        .logo-img {
+            width: 45px;  
+            height: 45px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            border: 2px solid #d4cec3; 
+        }
+        
+        .logo-texto {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #4a4543;
+        }
+        
         .nav-links {
             list-style: none;
             display: flex;
@@ -76,6 +90,10 @@
             padding: 20px;
         }
 
+        .page-section {
+            display: none; 
+        }
+        
         .page-section.active-page {
             display: block;
             animation: fadeIn 0.4s ease-in-out;
@@ -95,7 +113,10 @@
 
 
     <nav>
-        <div class="logo">Producción Electrónica</div>
+        <div class="logo-container">
+            <img src="img/logoIbero.png" alt="Logo" class="logo-img">
+            <span class="logo-texto">Mi Portafolio</span>
+        </div>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
             <li><button onclick="cambiarPagina('proyectos')" id="btn-proyectos">Proyectos</button></li>
@@ -134,7 +155,6 @@
             botones.forEach(btn => btn.classList.remove('active'));
 
             document.getElementById(idSeccion).classList.add('active-page');
-
             document.getElementById('btn-' + idSeccion).classList.add('active');
         }
     </script>
