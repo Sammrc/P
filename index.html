@@ -15,23 +15,18 @@
         }
 
         .logo-esquina {
-            position: fixed; 
-            top: 20px;
-            left: 25px;
-            width: 200px;
-            height: 200px;
+        
+            width: 100px;
+            height: 100px;
             object-fit: cover;
             border-radius: 12px; 
-            
             border: 2px solid #d4cec3;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            z-index: 1100; 
         }
         
        
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             background-color: #e3ded5; 
             padding: 12px 25px;
@@ -98,10 +93,10 @@
     </style>
 </head>
 <body>
-
-<img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
     
     <nav>
+        <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
+        
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
             <li><button onclick="cambiarPagina('proyectos')" id="btn-proyectos">Proyectos</button></li>
