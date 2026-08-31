@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
     <style>
-    
         body {
             background-color: #f4f1ea; 
             color: #2c2a29; 
@@ -14,19 +13,24 @@
             padding: 0;
         }
 
+    
         .logo-esquina {
-        
-            width: 100px;
-            height: 100px;
+            position: fixed; 
+            top: 20px;
+            left: 25px;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
             border-radius: 12px; 
             border: 2px solid #d4cec3;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1100; 
         }
         
-       
+     
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             background-color: #e3ded5; 
             padding: 12px 25px;
@@ -67,10 +71,11 @@
             color: #1f1d1c;
         }
 
+       
         main {
             max-width: 800px;
-            margin: 60px auto;
-            padding: 20px;
+            margin: 40px auto 60px auto; 
+            padding: 20px 20px 20px 40px; 
         }
 
         .page-section {
@@ -87,16 +92,24 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-       h1, h2 {
+        h1, h2 {
             color: #1f1d1c;
+        }
+
+        @media (max-width: 600px) {
+            .logo-esquina {
+                display: none; 
+            }
         }
     </style>
 </head>
 <body>
-    
-    <nav>
-        <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
+
+  
+    <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
         
+
+    <nav>
         <ul class="nav-links">
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
             <li><button onclick="cambiarPagina('proyectos')" id="btn-proyectos">Proyectos</button></li>
@@ -104,28 +117,23 @@
         </ul>
     </nav>
 
-
-<main>
-    
+    <main>
         <section id="inicio" class="page-section active-page">
             <h1>Portafolio de Proyectos</h1>
-            <p>...</p>
+            <p>Aquí va todo el contenido de inicio...</p>
         </section>
-
 
         <section id="proyectos" class="page-section">
             <h2>Mis Proyectos</h2>
-            <p>....</p>
+            <p>Aquí van los proyectos...</p>
         </section>
-
     
         <section id="acerca" class="page-section">
             <h2>Acerca del Equipo</h2>
-            <p>...</p>
+            <p>Información del equipo...</p>
         </section>
     </main>
 
- 
     <script>
         function cambiarPagina(idSeccion) {
             const secciones = document.querySelectorAll('.page-section');
