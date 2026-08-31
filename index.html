@@ -14,7 +14,7 @@
         }
 
         .logo-esquina {
-            /*position: fixed; */
+            position: fixed;
             top: 20px;
             left: 25px;
             width: 100px;
@@ -32,14 +32,17 @@
             align-items: center;
             background-color: #e3ded5; 
             padding: 12px 25px;
-            margin: 25px auto;
-            width: 60%;
-            max-width: 500px;
+            
+            /* AQUÍ CAMBIAS EL ESPACIO DE ARRIBA Y EL ANCHO DE LA CAJA */
+            margin: 10px auto 25px auto; /* Reduje el margen superior de 25px a 10px */
+            width: 50%;                  /* Puedes ajustar este porcentaje o cambiarlo por px */
+            max-width: 400px;            /* Modifica este max-width para hacerla más larga o corta */
+            
             border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 
             position: sticky;
-            top: 20px;
+            top: 15px; /* Ajustado para que quede más pegado arriba al hacer scroll */
             z-index: 1000;
         }
         
@@ -71,7 +74,7 @@
         
         main {
             max-width: 800px;
-            margin: 40px auto 60px auto; 
+            margin: 20px auto 60px auto; /* Reducido para que la sección de inicio suba */
             padding: 20px 20px 20px 40px; 
         }
 
@@ -91,6 +94,7 @@
         
         h1, h2 {
             color: #1f1d1c;
+            margin-top: 0; /* Elimina espacios extra en los títulos */
         }
 
         @media (max-width: 600px) {
@@ -99,10 +103,9 @@
             }
         }
 
-
         .info-footer-container {
-            margin-top: 60px;
-            padding-top: 30px;
+            margin-top: 40px;
+            padding-top: 20px;
             border-top: 2px solid #d4cec3; 
         }
 
@@ -112,86 +115,77 @@
             font-size: 1.3rem;
         }
 
-    .info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-    }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
 
-    .info-card {
-        background-color: #e3ded5;
-        padding: 20px;
-        border-radius: 16px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-        border: 1px solid #d4cec3;
-    }
+        .info-card {
+            background-color: #e3ded5;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid #d4cec3;
+        }
 
-    .info-card h4 {
-        margin-top: 0;
-        margin-bottom: 12px;
-        color: #1f1d1c;
-        font-size: 1rem;
-    }
+        .info-card h4 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #1f1d1c;
+            font-size: 1rem;
+        }
 
-    .info-card p {
-        margin: 6px 0;
-        font-size: 0.9rem;
-        color: #4a4543;
-    }
+        .info-card p {
+            margin: 6px 0;
+            font-size: 0.9rem;
+            color: #4a4543;
+        }
+       
+        .perfil-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    .info-card p {
-    margin: 6px 0;
-    font-size: 0.9rem;
-    color: #4a4543;
-    }
-   
-    .perfil-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    }
+        .perfil-foto {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 2px solid #d4cec3;
+            flex-shrink: 0;
+        }
 
-    .perfil-foto {
-        width: 65px;
-        height: 65px;
-        border-radius: 50%; 
-        object-fit: cover;
-        border: 2px solid #d4cec3;
-        flex-shrink: 0;
-    }
-
-    .perfil-info h4 {
-        margin: 0 0 4px 0;
-        font-size: 0.95rem;
-        color: #1f1d1c;
+        .perfil-info h4 {
+            margin: 0 0 4px 0;
+            font-size: 0.95rem;
+            color: #1f1d1c;
         }
         
-    .perfil-carrera {
-        margin: 0 0 6px 0 !important;
-        font-size: 0.85rem !important;
-        color: #615b58;
-        font-weight: 500;
-    }
+        .perfil-carrera {
+            margin: 0 0 6px 0 !important;
+            font-size: 0.85rem !important;
+            color: #615b58;
+            font-weight: 500;
+        }
 
-    .perfil-correo {
-        font-size: 0.85rem;
-        color: #2c2a29;
-        text-decoration: underline;
-        font-weight: 500;
-        word-break: break-all;
-    }
+        .perfil-correo {
+            font-size: 0.85rem;
+            color: #2c2a29;
+            text-decoration: underline;
+            font-weight: 500;
+            word-break: break-all;
+        }
 
-    .perfil-correo:hover {
-        color: #000;
-    }
-        
+        .perfil-correo:hover {
+            color: #000;
+        }
     </style>
 </head>
 <body>
 
-  
     <img src="img/logoIbero.png" alt="Logo Ibero" class="logo-esquina">
-        
 
     <nav>
         <ul class="nav-links">
@@ -206,43 +200,47 @@
             <h1>Portafolio de Proyectos</h1>
             <p>Bienvenido a nuestro portafolio de Producción Electrónica.</p>
 
-        <div class="info-footer-container">
-            <h3>Acerca del Equipo</h3>
+            <div class="info-footer-container">
+                <h3>Acerca del Equipo</h3>
 
-            <div class="info-card perfil-card">
-                <img src="img/samantha.jpg" alt="Sam" class="perfil-foto">
-                <div class="perfil-info">
-                    <h4>Samantha Ramírez Castillo</h4>
-                    <p class="perfil-carrera">Ingeniería Mecatrónica</p>
-                    <a href="mailto:196933@iberopuebla.mx" class="perfil-correo">196933@iberopuebla.mx</a>
-                </div>
-            </div>
+                <!-- Contenedor grid agregado para que las tarjetas queden ordenadas -->
+                <div class="info-grid">
+                    
+                    <!-- Tarjeta Samantha -->
+                    <div class="info-card perfil-card">
+                        <img src="img/samantha.jpg" alt="Sam" class="perfil-foto">
+                        <div class="perfil-info">
+                            <h4>Samantha Ramírez</h4>
+                            <p class="perfil-carrera">Ing. Mecatrónica</p>
+                            <a href="mailto:196933@iberopuebla.mx" class="perfil-correo">196933@iberopuebla.mx</a>
+                        </div>
+                    </div>
 
-            <div class="info-card perfil-card">
-                <img src="img/companera.jpg" alt="Karen" class="perfil-foto">
-                <div class="perfil-info">
-                    <h4>Karen Pastrana Monzón</h4>
-                     <p class="perfil-carrera">Ingeniería Mecatrónica</p>
-                    <a href="mailto:correo2@ibero.mx" class="perfil-correo">195949@iberopuebla.mx</a>
+                    <!-- Tarjeta Karen -->
+                    <div class="info-card perfil-card">
+                        <img src="img/companera.jpg" alt="Karen" class="perfil-foto">
+                        <div class="perfil-info">
+                            <h4>Karen Pastrana</h4>
+                            <p class="perfil-carrera">Ing. Mecatrónica</p>
+                            <a href="mailto:195949@iberopuebla.mx" class="perfil-correo">195949@iberopuebla.mx</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tarjeta Ubicación -->
+                    <div class="info-card">
+                        <h4>Ubicación</h4>
+                        <p>Universidad Iberoamericana Puebla</p>
+                        <p>San Andrés Cholula, Puebla</p>
+                    </div>
+
                 </div>
-            </div>
-            
-                 <div class="info-card">
-                    <h4>Ubicación</h4>
-                    <p>Universidad Iberoamericana Puebla</p>
-                    <p>Blvd. Del Niño Poblano #2901, Reserva Territorial Atlixcáyotl</p>
-                    <p>San Andrés Cholula, Puebla, México</p>
-                </div>
-            </div>
-        </div>          
-    </section>
+            </div>        
+        </section>
 
         <section id="proyectos" class="page-section">
             <h2>Mis Proyectos</h2>
             <p>Aquí van los proyectos...</p>
         </section>
-    
-    
     </main>
 
     <script>
