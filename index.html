@@ -13,7 +13,6 @@
             padding: 0;
         }
 
-    
         .logo-esquina {
             position: fixed; 
             top: 20px;
@@ -27,7 +26,6 @@
             z-index: 1100; 
         }
         
-     
         nav {
             display: flex;
             justify-content: center;
@@ -70,8 +68,7 @@
             background-color: #d4cec3;
             color: #1f1d1c;
         }
-
-       
+        
         main {
             max-width: 800px;
             margin: 40px auto 60px auto; 
@@ -101,6 +98,69 @@
                 display: none; 
             }
         }
+
+        .info-footer-container {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #d4cec3; 
+        }
+
+        .info-footer-container h3 {
+            color: #1f1d1c;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .info-card {
+        background-color: #e3ded5;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        border: 1px solid #d4cec3;
+    }
+
+    .info-card h4 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: #1f1d1c;
+        font-size: 1rem;
+    }
+
+    .info-card p {
+        margin: 6px 0;
+        font-size: 0.9rem;
+        color: #4a4543;
+    }
+
+
+    .integrantes-lista {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .integrantes-lista li {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        color: #4a4543;
+    }
+    
+    .integrantes-lista a {
+        color: #2c2a29;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+    .integrantes-lista a:hover {
+        color: #000;
+    }
+        
     </style>
 </head>
 <body>
@@ -120,8 +180,36 @@
     <main>
         <section id="inicio" class="page-section active-page">
             <h1>Portafolio de Proyectos</h1>
-            <p>Aquí va todo el contenido de inicio...</p>
-        </section>
+            <p>Bienvenido a nuestro portafolio de Producción Electrónica.</p>
+
+            <div class="info-footer-container">
+        <h3>Información del Proyecto</h3>
+
+             <div class="info-grid">
+                 <div class="info-card">
+                <h4>📚 Materia y Universidad</h4>
+                <p><strong>Universidad:</strong> Ibero Puebla</p>
+                <p><strong>Materia:</strong> Producción Electrónica</p>
+                <p><strong>Periodo:</strong> Otoño 2026</p>
+            </div>
+
+                 <div class="info-card">
+                <h4>Integrantes</h4>
+                <ul class="integrantes-lista">
+                    <li>Samantha Ramírez Castillo — <a href="mailto:196933@iberopuebla.mx">196933@iberopuebla.mx</a></li>
+                    <li>Karen Pastrana Monzón — <a href="mailto:195949@iberopuebla.mx">195949@iberopuebla.mx</a></li>
+                </ul>
+            </div>
+
+                 <div class="info-card">
+                    <h4>Ubicación y Contacto</h4>
+                    <p>Universidad Iberoamericana Puebla</p>
+                    <p>Blvd. Del Niño Poblano #2901, Reserva Territorial Atlixcáyotl</p>
+                    <p>San Andrés Cholula, Puebla, México</p>
+                </div>
+            </div>
+        </div>          
+    </section>
 
         <section id="proyectos" class="page-section">
             <h2>Mis Proyectos</h2>
