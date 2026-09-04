@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Portafolio de Producción Electrónica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -305,7 +305,6 @@
             width: fit-content;
         }
 
-        /* Franja de fondo con video */
         .franja-fondo-materia {
             width: 100vw;
             position: relative;
@@ -319,7 +318,6 @@
             overflow: hidden;
         }
 
-        /* Estilos para el video de fondo con capa oscura */
         .video-fondo {
             position: absolute;
             top: 50%;
@@ -340,7 +338,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Capa de transparencia oscura */
+            background: rgba(0, 0, 0, 0.7);
             z-index: 1;
         }
 
@@ -449,6 +447,78 @@
             color: #1f1d1c;
         }
 
+        /* Estilos del Banner Footer */
+        .site-footer {
+            background-color: #e3ded5;
+            border-top: 2px solid #d4cec3;
+            color: #4a4543;
+            padding: 40px 20px 20px 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            box-sizing: border-box;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section p {
+            margin: 4px 0;
+        }
+
+        .footer-github-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: #1f1d1c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-github-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid #d4cec3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+
+        .btn-subir {
+            background: none;
+            border: 1px solid #d4cec3;
+            color: #4a4543;
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-subir:hover {
+            background-color: #d4cec3;
+            color: #1f1d1c;
+        }
+
         @media (max-width: 768px) {
             .trabajos-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -483,9 +553,8 @@
             </div>
              
             <div class="franja-fondo-materia">
-                <!-- Video de fondo en bucle y silenciado -->
                 <video autoplay muted loop playsinline class="video-fondo">
-                    <source src="Videos/336233_medium.mp4" type="video/mp4">
+                    <source src="img/video_materia.mp4" type="video/mp4">
                     Tu navegador no soporta video HTML5.
                 </video>
 
@@ -556,17 +625,14 @@
             </div>
             
             <div class="trabajos-grid">
-                <!-- Tarjeta 1: KiCad (Lleva a su subsección interna) -->
                 <div class="trabajo-card" style="background-image: url('img/kicad_preview.jpg');" onclick="cambiarPagina('kicad-detalle')">
                     <h3>KiCad</h3>
                     <p>Diseño y esquemáticos</p>
                 </div>
-                <!-- Tarjeta 2 -->
                 <div class="trabajo-card" style="background-image: url('img/xtool_preview.jpg');">
                     <h3>2</h3>
                     <p>...</p>
                 </div>
-                <!-- Tarjeta 3 -->
                 <div class="trabajo-card" style="background-image: url('img/monofab_preview.jpg');">
                     <h3>3</h3>
                     <p>...</p>
@@ -585,9 +651,33 @@
         <section id="proyectos" class="page-section">
             <div class="contenido-inicial">
                 <h2>Proyectos</h2>
+                <p>...</p>
             </div>
         </section>
     </main>
+
+    <!-- BANNER FOOTER FINAL -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p><strong>Universidad Iberoamericana Puebla</strong></p>
+                <p>Departamento de Ciencias e Ingenierías</p>
+                <p>Producción Electrónica | Otoño 2026</p>
+                <p>Profesor: Osorio Figueroa Javier</p>
+            </div>
+
+            <div class="footer-section">
+                <p>Desarrollado por <strong>Samantha Ramírez Castillo</strong> y <strong>Karen  Melissa Pastrana Monzón</strong></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Portafolio de Proyectos. Todos los derechos reservados.</p>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn-subir">
+                Volver arriba <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
 
     <script>
         function cambiarPagina(idSeccion) {
