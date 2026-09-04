@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
-    <!-- Importamos FontAwesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -91,7 +89,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Título y subtítulo centrados */
         .contenido-inicial {
             text-align: center;
         }
@@ -111,7 +108,7 @@
             margin-top: 40px;
             padding-top: 20px;
             border-top: 2px solid #d4cec3; 
-            text-align: left; /* Restaura alineación izquierda para el footer y equipo */
+            text-align: left;
         }
 
         .info-footer-container h4 {
@@ -263,9 +260,8 @@
             gap: 15px;
         }
 
-        /* Recuadro principal de la materia con mayor transparencia (rgba de menor opacidad) */
         .materia-intro-card {
-            background-color: rgba(227, 222, 213, 0.75); /* Reducida la opacidad para mayor transparencia */
+            background-color: rgba(227, 222, 213, 0.75);
             padding: 30px;
             border-radius: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -287,7 +283,6 @@
             margin-bottom: 15px;
         }
 
-        /* Contenedor de objetivos adaptado al tamaño del texto con inline-block / auto */
         .materia-objetivos-grid {
             display: flex;
             flex-direction: column;
@@ -304,13 +299,8 @@
             font-size: 0.9rem;
             color: #4a4543;
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
-            display: inline-block; /* Hace que la caja se ajuste al contenido de texto */
+            display: inline-block;
             width: fit-content;
-        }
-
-        .objetivo-pill strong {
-            color: #1f1d1c;
-            /* Eliminamos el display block para que el título y la negrita permanezcan en la misma línea */
         }
 
         .franja-fondo-materia {
@@ -327,6 +317,82 @@
             margin-top: 30px;
             margin-bottom: 30px;
         }
+
+        /* Estilos para la pestaña de Trabajos / KiCad */
+        .trabajos-banner {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/PCB_BKG.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .trabajos-banner h2 {
+            color: #fff;
+            font-size: 2.2rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .trabajos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .trabajo-card {
+            background-color: #e3ded5;
+            border: 1px solid #d4cec3;
+            border-radius: 20px;
+            aspect-ratio: 1 / 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .trabajo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .trabajo-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+            color: #1f1d1c;
+        }
+
+        .trabajo-card p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #4a4543;
+        }
+
+        @media (max-width: 768px) {
+            .trabajos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trabajos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -342,6 +408,7 @@
     </nav>
 
     <main>
+        <!-- SECCIÓN INICIO -->
         <section id="inicio" class="page-section active-page">
             <div class="contenido-inicial">
                 <h1>Portafolio de Proyectos</h1>
@@ -391,9 +458,9 @@
                         </div>
                    </div>   
                     
-                   <div class="ubicacion-grande-container">
-                        <div class="tarjeta-ubicacion-completa">
-                            <h4><span class="gps-indicator"></span> Ubicación</h4>
+                   <div class="info-footer-container ubicacion-grande-container">
+                        <h4 style="margin-bottom: 20px;"><span class="gps-indicator"></span> Ubicación</h4>
+                        <div class="tarjeta-ubicacion-completa" style="margin-top: 0;">
                             <img src="img/Ibero.jpg" alt="Mapa" class="ubicacion-imagen">
                             
                             <div class="ubicacion-contenido">
@@ -409,9 +476,41 @@
             </div>     
         </section>
 
+        <!-- SECCIÓN TRABAJOS (ACERCA) -->
+        <section id="acerca" class="page-section">
+            <div class="trabajos-banner">
+                <h2>KiCad</h2>
+            </div>
+            
+            <div class="trabajos-grid">
+                <div class="trabajo-card">
+                    <i class="fa-solid fa-file-code" style="font-size: 1.8rem; color: #4a7c59; margin-bottom: 10px;"></i>
+                    <h3>Trabajo 1</h3>
+                    <p>Esquemático inicial</p>
+                </div>
+                <div class="trabajo-card">
+                    <i class="fa-solid fa-diagram-project" style="font-size: 1.8rem; color: #4a7c59; margin-bottom: 10px;"></i>
+                    <h3>Trabajo 2</h3>
+                    <p>Ruteado de PCB</p>
+                </div>
+                <div class="trabajo-card">
+                    <i class="fa-solid fa-cube" style="font-size: 1.8rem; color: #4a7c59; margin-bottom: 10px;"></i>
+                    <h3>Trabajo 3</h3>
+                    <p>Visualización 3D</p>
+                </div>
+                <div class="trabajo-card">
+                    <i class="fa-solid fa-check-to-slot" style="font-size: 1.8rem; color: #4a7c59; margin-bottom: 10px;"></i>
+                    <h3>Trabajo 4</h3>
+                    <p>Validación DRC</p>
+                </div>
+            </div>
+        </section>
+
+       
         <section id="proyectos" class="page-section">
-            <h2>Mis Proyectos</h2>
-            <p>...</p>
+            <div class="contenido-inicial">
+                <h2>...</h2>
+            </div>
         </section>
     </main>
 
