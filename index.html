@@ -469,22 +469,30 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Alineado verticalmente */
+            align-items: center; 
             flex-wrap: wrap;
-            gap: 15px; /* Reducido para juntar las secciones */
+            gap: 15px;
             margin-bottom: 30px;
         }
 
-        .footer-section p {
-            margin: 2px 0; /* Reducido para evitar separación excesiva entre líneas */
+        /* Bloque izquierda: Info de la materia y créditos agrupados en columna para evitar separación */
+        .footer-left-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        /* Estilo para el logo en el footer derecho (más grande) */
+        .footer-section p {
+            margin: 2px 0;
+        }
+
+        /* Estilo para el logo en el footer derecho (más grande y forzado a la derecha) */
         .footer-logo-derecha {
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
             border-radius: 8px;
+            margin-left: auto;
         }
 
         .footer-bottom {
@@ -550,7 +558,7 @@
              
             <div class="franja-fondo-materia">
                 <video autoplay muted loop playsinline class="video-fondo">
-                    <source src="img/video_materia.mp4" type="video/mp4">
+                    <source src="Videos/336233_medium.mp4" type="video/mp4">
                     Tu navegador no soporta video HTML5.
                 </video>
 
@@ -651,18 +659,20 @@
 
     <footer class="site-footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <p><strong>Universidad Iberoamericana Puebla</strong></p>
-                <p>Departamento de Ciencias e Ingenierías</p>
-                <p>Producción Electrónica | Otoño 2026</p>
-                <p>Profesor: Osorio Figueroa Javier</p>
+            <div class="footer-left-group">
+                <div class="footer-section">
+                    <p><strong>Universidad Iberoamericana Puebla</strong></p>
+                    <p>Departamento de Ciencias e Ingenierías</p>
+                    <p>Producción Electrónica | Otoño 2026</p>
+                    <p>Profesor: Osorio Figueroa Javier</p>
+                </div>
+
+                <div class="footer-section">
+                    <p>Desarrollado por: <strong>Samantha Ramírez Castillo</strong> y <strong>Karen Melissa Pastrana Monzón</strong></p>
+                </div>
             </div>
 
-            <div class="footer-section">
-                <p>Desarrollado por: <strong>Samantha Ramírez Castillo</strong> y <strong>Karen Melissa Pastrana Monzón</strong></p>
-            </div>
-
-            <div class="footer-section">
+            <div class="footer-section" style="display: flex; justify-content: flex-end;">
                 <img src="img/ibero_puebla.png" alt="Logo Universidad" class="footer-logo-derecha">
             </div>
         </div>
