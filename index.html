@@ -310,26 +310,31 @@
             margin-bottom: 5px;
         }
 
+        .franja-fondo-materia {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/PCB_BKG.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
 
-         .seccion-materia-fondo {
-                position: relative;
-                background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('img/PCB_BKG.jpg');
-                background-size: cover;
-                background-position: center;
-                padding: 40px 20px;
-                border-radius: 30px;
-                margin-top: 25px;
-                margin-bottom: 30px;
-            }
-    
-           
-         .seccion-materia-fondo .materia-intro-card {
-                background-color: rgba(227, 222, 213, 0.95); 
-                margin-top: 0;
-                margin-bottom: 0;
-                border: 1px solid rgba(212, 206, 195, 0.8);
-            }
-
+      
+        .franja-fondo-materia .materia-intro-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(227, 222, 213, 0.95);
+            border: 1px solid rgba(212, 206, 195, 0.8);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
         
     </style>
 </head>
@@ -348,15 +353,18 @@
 
     <main>
         <section id="inicio" class="page-section active-page">
+         <div class="contenido-inicial">
             <h1>Portafolio de Proyectos</h1>
             <p>Bienvenido a nuestro portafolio de Producción Electrónica.</p>
-
-         <div class="seccion-materia-fondo">
+         </div>
+            
+         <div class="franja-fondo-materia">
                 <div class="materia-intro-card">
                     <h2>¿De qué trata la materia?</h2>
                     <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo de prototipos y circuitos impresos (PCB) mediante la aplicación de técnicas especializadas de diseño, simulación y manufactura.</p>
                 
                 <div class="materia-objetivos-grid">
+                      <h3>Objetivos</h3>
                     <div class="objetivo-pill">
                         <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando softwares como <strong>KiCad</strong> .
                     </div>
@@ -366,15 +374,16 @@
                  </div>
             </div>
         </div>
-            
+
+        <div class="contenido-inicial">
             <div class="info-footer-container">
-                <h3>Acerca del Equipo</h3>
+                <h4>Acerca del Equipo</h4>
                 
                 <div class="info-grid">    
                     <div class="info-card perfil-card">
                         <img src="img/samantha.jpg" alt="Sam" class="perfil-foto">
                         <div class="perfil-info">
-                            <h4>Samantha Ramírez</h4>
+                            <h5>Samantha Ramírez</h5>
                             <p class="perfil-carrera">Ing. Mecatrónica</p>
                             <a href="mailto:196933@iberopuebla.mx" class="perfil-correo">196933@iberopuebla.mx</a>
                         </div>
@@ -384,7 +393,7 @@
                     <div class="info-card perfil-card">
                         <img src="img/fotoAlumno.png" alt="Karen" class="perfil-foto">
                         <div class="perfil-info">
-                            <h4>Karen Pastrana</h4>
+                            <h6>Karen Pastrana</h6>
                             <p class="perfil-carrera">Ing. Mecatrónica</p>
                             <a href="mailto:195949@iberopuebla.mx" class="perfil-correo">195949@iberopuebla.mx</a>
                         </div>
@@ -394,8 +403,6 @@
                <div class="ubicacion-grande-container">
                     <div class="tarjeta-ubicacion-completa">
                         <h4><span class="gps-indicator"></span> Ubicación</h4>
-                        
-                      
                         <img src="img/Ibero.jpg" alt="Mapa" class="ubicacion-imagen">
                         
                         <div class="ubicacion-contenido">
@@ -407,7 +414,7 @@
                         </div>
                     </div>
                 </div>
-
+              </div> 
             </div>     
         </section>
 
