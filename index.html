@@ -33,16 +33,15 @@
             background-color: #e3ded5; 
             padding: 12px 25px;
             
-            /* AQUÍ CAMBIAS EL ESPACIO DE ARRIBA Y EL ANCHO DE LA CAJA */
-            margin: 10px auto 25px auto; /* Reduje el margen superior de 25px a 10px */
-            width: 50%;                  /* Puedes ajustar este porcentaje o cambiarlo por px */
-            max-width: 400px;            /* Modifica este max-width para hacerla más larga o corta */
+            margin: 10px auto 25px auto; 
+            width: 50%;                  
+            max-width: 400px;            
             
             border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
 
             position: sticky;
-            top: 15px; /* Ajustado para que quede más pegado arriba al hacer scroll */
+            top: 15px; 
             z-index: 1000;
         }
         
@@ -94,7 +93,7 @@
         
         h1, h2 {
             color: #1f1d1c;
-            margin-top: 0; /* Elimina espacios extra en los títulos */
+            margin-top: 0; 
         }
 
         @media (max-width: 600px) {
@@ -124,7 +123,7 @@
         .info-card {
             background-color: #e3ded5;
             padding: 20px;
-            border-radius: 16px;
+            border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
             border: 1px solid #d4cec3;
         }
@@ -149,8 +148,8 @@
         }
 
         .perfil-foto {
-            width: 65px;
-            height: 65px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%; 
             object-fit: cover;
             border: 2px solid #d4cec3;
@@ -181,6 +180,61 @@
         .perfil-correo:hover {
             color: #000;
         }
+
+        .tarjeta-ubicacion {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tarjeta-ubicacion:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: #b8b1a4;
+        }
+        
+        .gps-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #4a7c59; 
+            border-radius: 50%;
+            margin-right: 6px;
+            box-shadow: 0 0 0 rgba(74, 124, 89, 0.4);
+            animation: pulse-gps 2s infinite;
+        }
+        
+        @keyframes pulse-gps {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(74, 124, 89, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 8px rgba(74, 124, 89, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(74, 124, 89, 0);
+            }
+        }
+        
+        .link-mapa {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #1f1d1c;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .link-mapa:hover {
+            text-decoration: underline;
+        }
+
+
+        
     </style>
 </head>
 <body>
@@ -200,13 +254,16 @@
             <h1>Portafolio de Proyectos</h1>
             <p>Bienvenido a nuestro portafolio de Producción Electrónica.</p>
 
+            <h2>¿De qué trata la materia?</h2>
+            <p>La materia de Producción Electrónica... </p>
+            
             <div class="info-footer-container">
                 <h3>Acerca del Equipo</h3>
 
-                <!-- Contenedor grid agregado para que las tarjetas queden ordenadas -->
+                
                 <div class="info-grid">
                     
-                    <!-- Tarjeta Samantha -->
+                
                     <div class="info-card perfil-card">
                         <img src="img/samantha.jpg" alt="Sam" class="perfil-foto">
                         <div class="perfil-info">
@@ -216,7 +273,7 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta Karen -->
+                   
                     <div class="info-card perfil-card">
                         <img src="img/fotoAlumno.png" alt="Karen" class="perfil-foto">
                         <div class="perfil-info">
@@ -226,11 +283,13 @@
                         </div>
                     </div>
                     
-                    <!-- Tarjeta Ubicación -->
-                    <div class="info-card">
-                        <h4>Ubicación</h4>
-                        <p>Universidad Iberoamericana Puebla</p>
-                        <p>San Andrés Cholula, Puebla</p>
+                    
+                                     
+                    <div class="info-card tarjeta-ubicacion" onclick="window.open('https://maps.app.goo.gl/3QWvGZ1w888888888', '_blank')">
+                        <h4><span class="gps-indicator"></span>Ubicación</h4>
+                        <p><strong>Universidad Iberoamericana Puebla</strong></p>
+                        <p>San Andrés Cholula, Pue.</p>
+                        <a href="https://maps.app.goo.gl/3QWvGZ1w888888888" target="_blank" class="link-mapa">Ver en Google Maps ↗</a>
                     </div>
 
                 </div>
