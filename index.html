@@ -469,6 +469,7 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
+            align-items: center; /* Alineado verticalmente */
             flex-wrap: wrap;
             gap: 30px;
             margin-bottom: 30px;
@@ -478,16 +479,12 @@
             margin: 4px 0;
         }
 
-        .footer-github-link {
-            display: inline-block;
-            margin-top: 8px;
-            color: #1f1d1c;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .footer-github-link:hover {
-            text-decoration: underline;
+        /* Estilo para el logo en el footer derecho */
+        .footer-logo-derecha {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .footer-bottom {
@@ -545,7 +542,6 @@
     </nav>
 
     <main>
-        <!-- SECCIÓN INICIO -->
         <section id="inicio" class="page-section active-page">
             <div class="contenido-inicial">
                 <h1>Portafolio de Proyectos</h1>
@@ -554,7 +550,7 @@
              
             <div class="franja-fondo-materia">
                 <video autoplay muted loop playsinline class="video-fondo">
-                    <source src="Videos/336233_medium.mp4" type="video/mp4">
+                    <source src="img/video_materia.mp4" type="video/mp4">
                     Tu navegador no soporta video HTML5.
                 </video>
 
@@ -584,7 +580,7 @@
                         <div class="info-card perfil-card">
                             <img src="img/samantha.jpg" alt="Sam" class="perfil-foto">
                             <div class="perfil-info">
-                                <h5>Samantha Ramírez</h5>
+                                <h5>Samantha Ramírez Castillo</h5>
                                 <p class="perfil-carrera">Ing. Mecatrónica</p>
                                 <a href="mailto:196933@iberopuebla.mx" class="perfil-correo">196933@iberopuebla.mx</a>
                             </div>
@@ -593,7 +589,7 @@
                         <div class="info-card perfil-card">
                             <img src="img/fotoAlumno.png" alt="Karen" class="perfil-foto">
                             <div class="perfil-info">
-                                <h6>Karen Pastrana</h6>
+                                <h6>Karen Melissa Pastrana Monzón</h6>
                                 <p class="perfil-carrera">Ing. Mecatrónica</p>
                                 <a href="mailto:195949@iberopuebla.mx" class="perfil-correo">195949@iberopuebla.mx</a>
                             </div>
@@ -618,7 +614,6 @@
             </div>     
         </section>
 
-        <!-- SECCIÓN TRABAJOS (GRID PRINCIPAL) -->
         <section id="acerca" class="page-section">
             <div class="trabajos-banner">
                 <h2>Trabajos Realizados</h2>
@@ -640,14 +635,12 @@
             </div>
         </section>
 
-        <!-- SUBSECCIÓN INTERNA DE KICAD -->
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica: KiCad</h2>
             <p>...</p>
         </section>
 
-        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
             <div class="contenido-inicial">
                 <h2>Proyectos</h2>
@@ -656,7 +649,6 @@
         </section>
     </main>
 
-    <!-- BANNER FOOTER FINAL -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -667,7 +659,11 @@
             </div>
 
             <div class="footer-section">
-                <p>Desarrollado por: <strong>Samantha Ramírez Castillo</strong> y <strong>Karen  Melissa Pastrana Monzón</strong></p>
+                <p>Desarrollado por <strong>Samantha Ramírez Castillo</strong> y <strong>Karen Melissa Pastrana Monzón</strong></p>
+            </div>
+
+            <div class="footer-section">
+                <img src="img/ibero_puebla.png" alt="Logo Universidad" class="footer-logo-derecha">
             </div>
         </div>
         
