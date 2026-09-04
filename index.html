@@ -269,6 +269,8 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: left;
+            position: relative;
+            z-index: 2;
         }
 
         .materia-intro-card h2 {
@@ -303,6 +305,7 @@
             width: fit-content;
         }
 
+        /* Franja de fondo con video */
         .franja-fondo-materia {
             width: 100vw;
             position: relative;
@@ -310,12 +313,35 @@
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/PCB_BKG.jpg');
-            background-size: cover;
-            background-position: center;
             padding: 50px 20px;
             margin-top: 30px;
             margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        /* Estilos para el video de fondo con capa oscura */
+        .video-fondo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .franja-fondo-materia::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Capa de transparencia oscura */
+            z-index: 1;
         }
 
         .trabajos-banner {
@@ -348,7 +374,6 @@
             margin: 0 auto;
         }
 
-        /* Tarjetas cuadradas con imagen de fondo y transparencia oscura */
         .trabajo-card {
             position: relative;
             border-radius: 20px;
@@ -368,7 +393,6 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Capa de transparencia oscura sobre la imagen */
         .trabajo-card::before {
             content: '';
             position: absolute;
@@ -376,7 +400,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.45); /* Capa oscura ajustable */
+            background: rgba(0, 0, 0, 0.45);
             transition: background 0.3s ease;
             z-index: 1;
         }
@@ -387,10 +411,9 @@
         }
 
         .trabajo-card:hover::before {
-            background: rgba(0, 0, 0, 0.3); /* Se aclara ligeramente al pasar el cursor */
+            background: rgba(0, 0, 0, 0.3);
         }
 
-        /* Contenido dentro de la tarjeta para que quede por encima de la capa oscura */
         .trabajo-card h3, .trabajo-card p {
             position: relative;
             z-index: 2;
@@ -409,7 +432,6 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
-        /* Botón de regreso para las subsecciones de contenido */
         .btn-regresar {
             background: none;
             border: 1px solid #d4cec3;
@@ -461,6 +483,12 @@
             </div>
              
             <div class="franja-fondo-materia">
+                <!-- Video de fondo en bucle y silenciado -->
+                <video autoplay muted loop playsinline class="video-fondo">
+                    <source src="Videos/336233_medium.mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
+
                 <div class="materia-intro-card">
                     <h2>¿De qué trata la materia?</h2>
                     <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo de prototipos y circuitos impresos (PCB) mediante la aplicación de técnicas especializadas de diseño, simulación y manufactura.</p>
@@ -535,13 +563,13 @@
                 </div>
                 <!-- Tarjeta 2 -->
                 <div class="trabajo-card" style="background-image: url('img/xtool_preview.jpg');">
-                    <h3>XTOOL</h3>
-                    <p>Cortadora láser</p>
+                    <h3>2</h3>
+                    <p>...</p>
                 </div>
                 <!-- Tarjeta 3 -->
                 <div class="trabajo-card" style="background-image: url('img/monofab_preview.jpg');">
-                    <h3>MONOFAB</h3>
-                    <p>Mecanizado CNC</p>
+                    <h3>3</h3>
+                    <p>...</p>
                 </div>
             </div>
         </section>
@@ -550,15 +578,13 @@
         <section id="kicad-detalle" class="page-section">
             <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
             <h2>Práctica: KiCad</h2>
-            <p>Aquí puedes agregar todo el contenido, imágenes, reportes o explicaciones detalladas correspondientes a los trabajos realizados con KiCad.</p>
-            <!-- Puedes agregar más elementos HTML aquí dentro -->
+            <p>...</p>
         </section>
 
         <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
             <div class="contenido-inicial">
-                <h2>Mis Proyectos</h2>
-                <p>Próximamente...</p>
+                <h2>Proyectos</h2>
             </div>
         </section>
     </main>
@@ -568,7 +594,6 @@
             const secciones = document.querySelectorAll('.page-section');
             secciones.forEach(sec => sec.classList.remove('active-page'));
 
-            // Si estamos en la subsección de KiCad, mantenemos iluminado el botón de "Trabajos" en el nav
             const botones = document.querySelectorAll('.nav-links button');
             botones.forEach(btn => btn.classList.remove('active'));
 
