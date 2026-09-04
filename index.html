@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
+    <!-- Importamos FontAwesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             background-color: #f4f1ea; 
@@ -88,6 +91,11 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        /* Título y subtítulo centrados */
+        .contenido-inicial {
+            text-align: center;
+        }
+
         h1, h2 {
             color: #1f1d1c;
             margin-top: 0; 
@@ -103,6 +111,7 @@
             margin-top: 40px;
             padding-top: 20px;
             border-top: 2px solid #d4cec3; 
+            text-align: left; /* Restaura alineación izquierda para el footer y equipo */
         }
 
         .info-footer-container h4 {
@@ -254,14 +263,16 @@
             gap: 15px;
         }
 
+        /* Recuadro principal de la materia con mayor transparencia (rgba de menor opacidad) */
         .materia-intro-card {
-            background-color: rgba(227, 222, 213, 0.95);
+            background-color: rgba(227, 222, 213, 0.75); /* Reducida la opacidad para mayor transparencia */
             padding: 30px;
             border-radius: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(212, 206, 195, 0.8);
+            border: 1px solid rgba(212, 206, 195, 0.6);
             max-width: 800px;
             margin: 0 auto;
+            text-align: left;
         }
 
         .materia-intro-card h2 {
@@ -273,14 +284,16 @@
             font-size: 1.1rem;
             color: #1f1d1c;
             margin-top: 15px;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
 
+        /* Contenedor de objetivos adaptado al tamaño del texto con inline-block / auto */
         .materia-objetivos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 15px;
             margin-top: 15px;
+            align-items: stretch;
         }
 
         .objetivo-pill {
@@ -291,12 +304,13 @@
             font-size: 0.9rem;
             color: #4a4543;
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+            display: inline-block; /* Hace que la caja se ajuste al contenido de texto */
+            width: fit-content;
         }
 
         .objetivo-pill strong {
             color: #1f1d1c;
-            display: block;
-            margin-bottom: 5px;
+            /* Eliminamos el display block para que el título y la negrita permanezcan en la misma línea */
         }
 
         .franja-fondo-materia {
@@ -342,16 +356,18 @@
                     <h3>Objetivos</h3>
                     <div class="materia-objetivos-grid">
                         <div class="objetivo-pill">
+                            <i class="fa-solid fa-microchip" style="margin-right: 8px; color: #4a7c59;"></i>
                             <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando softwares como <strong>KiCad</strong>.
                         </div>
                         <div class="objetivo-pill">
+                            <i class="fa-solid fa-industry" style="margin-right: 8px; color: #4a7c59;"></i>
                             <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser <strong>XTOOL</strong> y la máquina <strong>MONOFAB</strong>.
                         </div>
                    </div>
                 </div>
             </div>
 
-            <div class="contenido-inicial">
+            <div class="contenido-inicial" style="text-align: left;">
                 <div class="info-footer-container">
                     <h4>Acerca del Equipo</h4>
                     
