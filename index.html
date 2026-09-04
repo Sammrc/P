@@ -73,7 +73,7 @@
         
         main {
             max-width: 800px;
-            margin: 20px auto 60px auto; /* Reducido para que la sección de inicio suba */
+            margin: 20px auto 60px auto; 
             padding: 20px 20px 20px 40px; 
         }
 
@@ -272,7 +272,43 @@
             gap: 15px;
         }
 
-        
+        .materia-intro-card {
+            background-color: #e3ded5;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid #d4cec3;
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+
+        .materia-intro-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .materia-objetivos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .objetivo-pill {
+            background-color: #f4f1ea;
+            padding: 16px 20px;
+            border-radius: 20px;
+            border: 1px solid #d4cec3;
+            font-size: 0.9rem;
+            color: #4a4543;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .objetivo-pill strong {
+            color: #1f1d1c;
+            display: block;
+            margin-bottom: 5px;
+        }
         
     </style>
 </head>
@@ -293,8 +329,20 @@
             <h1>Portafolio de Proyectos</h1>
             <p>Bienvenido a nuestro portafolio de Producción Electrónica.</p>
 
-            <h2>¿De qué trata la materia?</h2>
-            <p>La materia de Producción Electrónica... </p>
+            <div class="materia-intro-card">
+                <h2>¿De qué trata la materia?</h2>
+                <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo integral de prototipos y circuitos impresos (PCB) mediante la aplicación de técnicas especializadas de diseño, simulación y manufactura[cite: 1].</p>
+                
+                <div class="materia-objetivos-grid">
+                    <div class="objetivo-pill">
+                        <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando software CAD[cite: 1].
+                    </div>
+                    <div class="objetivo-pill">
+                        <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser XTOOL y la máquina MONOFAB[cite: 1].
+                    </div>
+            
+                </div>
+            </div>
             
             <div class="info-footer-container">
                 <h3>Acerca del Equipo</h3>
