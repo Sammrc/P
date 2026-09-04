@@ -318,7 +318,6 @@
             margin-bottom: 30px;
         }
 
-        /* Estilos para la pestaña de Trabajos / KiCad */
         .trabajos-banner {
             width: 100vw;
             position: relative;
@@ -349,37 +348,83 @@
             margin: 0 auto;
         }
 
+        /* Tarjetas cuadradas con imagen de fondo y transparencia oscura */
         .trabajo-card {
-            background-color: #e3ded5;
-            border: 1px solid #d4cec3;
+            position: relative;
             border-radius: 20px;
             aspect-ratio: 1 / 1;
-            padding: 20px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
             cursor: pointer;
+            border: 1px solid #d4cec3;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Capa de transparencia oscura sobre la imagen */
+        .trabajo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45); /* Capa oscura ajustable */
+            transition: background 0.3s ease;
+            z-index: 1;
         }
 
         .trabajo-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .trabajo-card:hover::before {
+            background: rgba(0, 0, 0, 0.3); /* Se aclara ligeramente al pasar el cursor */
+        }
+
+        /* Contenido dentro de la tarjeta para que quede por encima de la capa oscura */
+        .trabajo-card h3, .trabajo-card p {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
         }
 
         .trabajo-card h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.1rem;
-            color: #1f1d1c;
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .trabajo-card p {
             margin: 0;
             font-size: 0.85rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Botón de regreso para las subsecciones de contenido */
+        .btn-regresar {
+            background: none;
+            border: 1px solid #d4cec3;
             color: #4a4543;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-regresar:hover {
+            background-color: #d4cec3;
+            color: #1f1d1c;
         }
 
         @media (max-width: 768px) {
@@ -476,40 +521,44 @@
             </div>     
         </section>
 
-        <!-- SECCIÓN TRABAJOS (ACERCA) -->
+        <!-- SECCIÓN TRABAJOS (GRID PRINCIPAL) -->
         <section id="acerca" class="page-section">
             <div class="trabajos-banner">
-                <h2>KiCad</h2>
+                <h2>Trabajos Realizados</h2>
             </div>
             
             <div class="trabajos-grid">
-                <div class="trabajo-card">
-                    <i class="fa-solid fa-file-code" style="font-size: 1.8rem; color: #4a7c59; margin-bottom: 10px;"></i>
-                    <h3>Trabajo 1</h3>
-                    <p>Esquemático inicial</p>
+                <!-- Tarjeta 1: KiCad (Lleva a su subsección interna) -->
+                <div class="trabajo-card" style="background-image: url('img/kicad_preview.jpg');" onclick="cambiarPagina('kicad-detalle')">
+                    <h3>KiCad</h3>
+                    <p>Diseño y esquemáticos</p>
                 </div>
-                <div class="trabajo-card">
-                    <i class="fa-solid fa-diagram-project" style="font-size: 1.8rem; color: #4a7c59; margin-bottom: 10px;"></i>
-                    <h3>Trabajo 2</h3>
-                    <p>Ruteado de PCB</p>
+                <!-- Tarjeta 2 -->
+                <div class="trabajo-card" style="background-image: url('img/xtool_preview.jpg');">
+                    <h3>XTOOL</h3>
+                    <p>Cortadora láser</p>
                 </div>
-                <div class="trabajo-card">
-                    <i class="fa-solid fa-cube" style="font-size: 1.8rem; color: #4a7c59; margin-bottom: 10px;"></i>
-                    <h3>Trabajo 3</h3>
-                    <p>Visualización 3D</p>
-                </div>
-                <div class="trabajo-card">
-                    <i class="fa-solid fa-check-to-slot" style="font-size: 1.8rem; color: #4a7c59; margin-bottom: 10px;"></i>
-                    <h3>Trabajo 4</h3>
-                    <p>Validación DRC</p>
+                <!-- Tarjeta 3 -->
+                <div class="trabajo-card" style="background-image: url('img/monofab_preview.jpg');">
+                    <h3>MONOFAB</h3>
+                    <p>Mecanizado CNC</p>
                 </div>
             </div>
         </section>
 
-       
+        <!-- SUBSECCIÓN INTERNA DE KICAD -->
+        <section id="kicad-detalle" class="page-section">
+            <button class="btn-regresar" onclick="cambiarPagina('acerca')">← Volver a Trabajos</button>
+            <h2>Práctica: KiCad</h2>
+            <p>Aquí puedes agregar todo el contenido, imágenes, reportes o explicaciones detalladas correspondientes a los trabajos realizados con KiCad.</p>
+            <!-- Puedes agregar más elementos HTML aquí dentro -->
+        </section>
+
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos" class="page-section">
             <div class="contenido-inicial">
-                <h2>...</h2>
+                <h2>Mis Proyectos</h2>
+                <p>Próximamente...</p>
             </div>
         </section>
     </main>
@@ -519,11 +568,17 @@
             const secciones = document.querySelectorAll('.page-section');
             secciones.forEach(sec => sec.classList.remove('active-page'));
 
+            // Si estamos en la subsección de KiCad, mantenemos iluminado el botón de "Trabajos" en el nav
             const botones = document.querySelectorAll('.nav-links button');
             botones.forEach(btn => btn.classList.remove('active'));
 
             document.getElementById(idSeccion).classList.add('active-page');
-            document.getElementById('btn-' + idSeccion).classList.add('active');
+            
+            if (idSeccion === 'kicad-detalle') {
+                document.getElementById('btn-acerca').classList.add('active');
+            } else if (document.getElementById('btn-' + idSeccion)) {
+                document.getElementById('btn-' + idSeccion).classList.add('active');
+            }
         }
     </script>
 
