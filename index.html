@@ -32,14 +32,11 @@
             align-items: center;
             background-color: #e3ded5; 
             padding: 12px 25px;
-            
             margin: 10px auto 25px auto; 
-            width: 50%;                  
-            max-width: 400px;            
-            
+            width: 50%;                 
+            max-width: 400px;           
             border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-
             position: sticky;
             top: 15px; 
             z-index: 1000;
@@ -108,7 +105,7 @@
             border-top: 2px solid #d4cec3; 
         }
 
-        .info-footer-container h3 {
+        .info-footer-container h4 {
             color: #1f1d1c;
             margin-bottom: 20px;
             font-size: 1.3rem;
@@ -123,7 +120,7 @@
         .info-card {
             background-color: #e3ded5;
             padding: 20px;
-            border-radius: 50px;
+            border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
             border: 1px solid #d4cec3;
         }
@@ -156,7 +153,7 @@
             flex-shrink: 0;
         }
 
-        .perfil-info h4 {
+        .perfil-info h5, .perfil-info h6 {
             margin: 0 0 4px 0;
             font-size: 0.95rem;
             color: #1f1d1c;
@@ -179,19 +176,6 @@
 
         .perfil-correo:hover {
             color: #000;
-        }
-
-        .tarjeta-ubicacion {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tarjeta-ubicacion:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            border-color: #b8b1a4;
         }
         
         .gps-indicator {
@@ -233,7 +217,6 @@
             text-decoration: underline;
         }
 
-        
         .ubicacion-grande-container {
             margin-top: 30px;
         }
@@ -241,7 +224,7 @@
         .tarjeta-ubicacion-completa {
             background-color: #e3ded5;
             padding: 25px;
-            border-radius: 50px; 
+            border-radius: 25px; 
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
             border: 1px solid #d4cec3;
             display: flex;
@@ -255,12 +238,11 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
         }
 
-       
         .ubicacion-imagen {
             width: 100%;
             height: 220px; 
             object-fit: cover;
-            border-radius: 50px;
+            border-radius: 16px;
             border: 1px solid #d4cec3;
         }
 
@@ -273,13 +255,13 @@
         }
 
         .materia-intro-card {
-            background-color: #e3ded5;
+            background-color: rgba(227, 222, 213, 0.95);
             padding: 30px;
             border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-            border: 1px solid #d4cec3;
-            margin-top: 25px;
-            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 206, 195, 0.8);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .materia-intro-card h2 {
@@ -287,11 +269,18 @@
             margin-bottom: 15px;
         }
 
+        .materia-intro-card h3 {
+            font-size: 1.1rem;
+            color: #1f1d1c;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
         .materia-objetivos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .objetivo-pill {
@@ -324,18 +313,6 @@
             margin-top: 30px;
             margin-bottom: 30px;
         }
-
-      
-        .franja-fondo-materia .materia-intro-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: rgba(227, 222, 213, 0.95);
-            border: 1px solid rgba(212, 206, 195, 0.8);
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        
     </style>
 </head>
 <body>
@@ -347,74 +324,72 @@
             <li><button onclick="cambiarPagina('inicio')" id="btn-inicio" class="active">Inicio</button></li>
             <li><button onclick="cambiarPagina('acerca')" id="btn-acerca">Trabajos</button></li>
             <li><button onclick="cambiarPagina('proyectos')" id="btn-proyectos">Proyectos</button></li>
-            
         </ul>
     </nav>
 
     <main>
         <section id="inicio" class="page-section active-page">
-         <div class="contenido-inicial">
-            <h1>Portafolio de Proyectos</h1>
-            <p>Bienvenido a nuestro portafolio de Producción Electrónica.</p>
-         </div>
-            
-         <div class="franja-fondo-materia">
+            <div class="contenido-inicial">
+                <h1>Portafolio de Proyectos</h1>
+                <p>Bienvenido a nuestro portafolio de Producción Electrónica.</p>
+            </div>
+             
+            <div class="franja-fondo-materia">
                 <div class="materia-intro-card">
                     <h2>¿De qué trata la materia?</h2>
                     <p>La asignatura de <strong>Producción Electrónica</strong> está enfocada en el desarrollo de prototipos y circuitos impresos (PCB) mediante la aplicación de técnicas especializadas de diseño, simulación y manufactura.</p>
                 
-                <div class="materia-objetivos-grid">
-                      <h3>Objetivos</h3>
-                    <div class="objetivo-pill">
-                        <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando softwares como <strong>KiCad</strong> .
-                    </div>
-                    <div class="objetivo-pill">
-                        <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser <strong>XTOOL</strong>  y la máquina <strong>MONOFAB</strong> .
-                    </div>
-                 </div>
-            </div>
-        </div>
-
-        <div class="contenido-inicial">
-            <div class="info-footer-container">
-                <h4>Acerca del Equipo</h4>
-                
-                <div class="info-grid">    
-                    <div class="info-card perfil-card">
-                        <img src="img/samantha.jpg" alt="Sam" class="perfil-foto">
-                        <div class="perfil-info">
-                            <h5>Samantha Ramírez</h5>
-                            <p class="perfil-carrera">Ing. Mecatrónica</p>
-                            <a href="mailto:196933@iberopuebla.mx" class="perfil-correo">196933@iberopuebla.mx</a>
+                    <h3>Objetivos</h3>
+                    <div class="materia-objetivos-grid">
+                        <div class="objetivo-pill">
+                            <strong>Diseño y Simulación:</strong> Creación e interpretación de diagramas esquemáticos y circuitos utilizando softwares como <strong>KiCad</strong>.
                         </div>
-                    </div>
-
-                   
-                    <div class="info-card perfil-card">
-                        <img src="img/fotoAlumno.png" alt="Karen" class="perfil-foto">
-                        <div class="perfil-info">
-                            <h6>Karen Pastrana</h6>
-                            <p class="perfil-carrera">Ing. Mecatrónica</p>
-                            <a href="mailto:195949@iberopuebla.mx" class="perfil-correo">195949@iberopuebla.mx</a>
+                        <div class="objetivo-pill">
+                            <strong>Manufactura Avanzada:</strong> Fabricación física de prototipos mediante la aplicación de reglas de ruteado y el uso de equipo especializado como la cortadora láser <strong>XTOOL</strong> y la máquina <strong>MONOFAB</strong>.
                         </div>
-                    </div>
-                 </div>   
-                    
-               <div class="ubicacion-grande-container">
-                    <div class="tarjeta-ubicacion-completa">
-                        <h4><span class="gps-indicator"></span> Ubicación</h4>
-                        <img src="img/Ibero.jpg" alt="Mapa" class="ubicacion-imagen">
-                        
-                        <div class="ubicacion-contenido">
-                            <div>
-                                <p><strong>Universidad Iberoamericana Puebla</strong></p>
-                                <p style="margin: 0; font-size: 0.9rem; color: #4a4543;">Blvd. Del Niño Poblano #2901, Reserva Territorial Atlixcáyotl, San Andrés Cholula, Pue.</p>
-                            </div>
-                            <a href="https://maps.app.goo.gl/ENTByS38ee4rZKPLA" target="_blank" class="link-mapa" style="margin-top: 0; background-color: #d4cec3; padding: 10px 16px; border-radius: 20px;">Ver en Google Maps ↗</a>
-                        </div>
-                    </div>
+                   </div>
                 </div>
-              </div> 
+            </div>
+
+            <div class="contenido-inicial">
+                <div class="info-footer-container">
+                    <h4>Acerca del Equipo</h4>
+                    
+                    <div class="info-grid">    
+                        <div class="info-card perfil-card">
+                            <img src="img/samantha.jpg" alt="Sam" class="perfil-foto">
+                            <div class="perfil-info">
+                                <h5>Samantha Ramírez</h5>
+                                <p class="perfil-carrera">Ing. Mecatrónica</p>
+                                <a href="mailto:196933@iberopuebla.mx" class="perfil-correo">196933@iberopuebla.mx</a>
+                            </div>
+                        </div>
+
+                        <div class="info-card perfil-card">
+                            <img src="img/fotoAlumno.png" alt="Karen" class="perfil-foto">
+                            <div class="perfil-info">
+                                <h6>Karen Pastrana</h6>
+                                <p class="perfil-carrera">Ing. Mecatrónica</p>
+                                <a href="mailto:195949@iberopuebla.mx" class="perfil-correo">195949@iberopuebla.mx</a>
+                            </div>
+                        </div>
+                   </div>   
+                    
+                   <div class="ubicacion-grande-container">
+                        <div class="tarjeta-ubicacion-completa">
+                            <h4><span class="gps-indicator"></span> Ubicación</h4>
+                            <img src="img/Ibero.jpg" alt="Mapa" class="ubicacion-imagen">
+                            
+                            <div class="ubicacion-contenido">
+                                <div>
+                                    <p><strong>Universidad Iberoamericana Puebla</strong></p>
+                                    <p style="margin: 0; font-size: 0.9rem; color: #4a4543;">Blvd. Del Niño Poblano #2901, Reserva Territorial Atlixcáyotl, San Andrés Cholula, Pue.</p>
+                                </div>
+                                <a href="https://maps.app.goo.gl/ENTByS38ee4rZKPLA" target="_blank" class="link-mapa" style="margin-top: 0; background-color: #d4cec3; padding: 10px 16px; border-radius: 20px;">Ver en Google Maps ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>     
         </section>
 
